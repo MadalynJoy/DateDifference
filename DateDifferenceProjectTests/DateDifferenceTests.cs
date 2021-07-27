@@ -25,7 +25,7 @@ namespace DateDifferenceProject.Tests
             MyDate expected = null;
 
             // Act
-            MyDate result = DateDifference.parseInputandValidate(inputDate);
+            MyDate result = ParseInputandValidate(inputDate);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -39,7 +39,7 @@ namespace DateDifferenceProject.Tests
             MyDate expected = null;
 
             // Act
-            MyDate result = DateDifference.parseInputandValidate(inputDate);
+            MyDate result = ParseInputandValidate(inputDate);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -53,7 +53,7 @@ namespace DateDifferenceProject.Tests
             MyDate expected = null;
 
             // Act
-            MyDate result = DateDifference.parseInputandValidate(inputDate);
+            MyDate result = ParseInputandValidate(inputDate);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -67,7 +67,7 @@ namespace DateDifferenceProject.Tests
             MyDate expected = null;
 
             // Act
-            MyDate result = DateDifference.parseInputandValidate(inputDate);
+            MyDate result = ParseInputandValidate(inputDate);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -81,7 +81,7 @@ namespace DateDifferenceProject.Tests
             MyDate expected = null;
 
             // Act
-            MyDate result = DateDifference.parseInputandValidate(inputDate);
+            MyDate result = ParseInputandValidate(inputDate);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -95,7 +95,7 @@ namespace DateDifferenceProject.Tests
             MyDate expected = null;
 
             // Act
-            MyDate result = DateDifference.parseInputandValidate(inputDate);
+            MyDate result = ParseInputandValidate(inputDate);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -110,7 +110,7 @@ namespace DateDifferenceProject.Tests
             MyDate expected = new MyDate(1, 1, 1900);
 
             // Act
-            MyDate result = DateDifference.parseInputandValidate(inputDate);
+            MyDate result = ParseInputandValidate(inputDate);
 
             // Assert
             compareDates(expected, result);
@@ -125,7 +125,7 @@ namespace DateDifferenceProject.Tests
             MyDate expected = new MyDate(31, 12, 2010);
 
             // Act
-            MyDate result = DateDifference.parseInputandValidate(inputDate);
+            MyDate result = ParseInputandValidate(inputDate);
 
             // Assert
             compareDates(expected, result);
@@ -139,7 +139,7 @@ namespace DateDifferenceProject.Tests
             MyDate expected = null;
 
             // Act
-            MyDate result = DateDifference.parseInputandValidate(inputDate);
+            MyDate result = ParseInputandValidate(inputDate);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -155,7 +155,7 @@ namespace DateDifferenceProject.Tests
             int expected = 366;
 
             // Act
-            var result = DateDifference.calcDaysDifference(date1, date2);
+            var result = MyDate.CountDaysBetweenTwoDates(date1, date2);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -172,7 +172,7 @@ namespace DateDifferenceProject.Tests
             int expected = -366;
 
             // Act
-            var result = DateDifference.calcDaysDifference(date1, date2);
+            var result = MyDate.CountDaysBetweenTwoDates(date1, date2);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -188,7 +188,7 @@ namespace DateDifferenceProject.Tests
             int expected = 31;
 
             // Act
-            var result = DateDifference.getDaysInMonth(inputMonth, inputYear);
+            var result = MyDate.GetDaysInMonth(inputMonth, inputYear);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -203,7 +203,7 @@ namespace DateDifferenceProject.Tests
             int expected = 29;
 
             // Act
-            var result = DateDifference.getDaysInMonth(inputMonth, inputYear);
+            var result = MyDate.GetDaysInMonth(inputMonth, inputYear);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -218,7 +218,7 @@ namespace DateDifferenceProject.Tests
             int expected = 28;
 
             // Act
-            var result = DateDifference.getDaysInMonth(inputMonth, inputYear);
+            var result = MyDate.GetDaysInMonth(inputMonth, inputYear);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -232,7 +232,7 @@ namespace DateDifferenceProject.Tests
             int expected = 482;
 
             // Act
-            var result = DateDifference.countLeapYears(date);
+            var result = MyDate.CountNumberOfLeapYearsFromDayZero(date);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -246,7 +246,7 @@ namespace DateDifferenceProject.Tests
             int expected = 486;
 
             // Act
-            var result = DateDifference.countLeapYears(date);
+            var result = MyDate.CountNumberOfLeapYearsFromDayZero(date);
 
             // Assert
             Assert.AreEqual(expected, result);

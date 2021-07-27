@@ -63,7 +63,21 @@ namespace DateDifferenceProject.Tests
         public void ShouldReturnNullOutsideLowerYearBounds()
         {
             // Arrange
-            string inputDate = "01 01 1800";
+            string inputDate = "31 12 1899";
+            MyDate expected = null;
+
+            // Act
+            MyDate result = DateDifference.parseInputandValidate(inputDate);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod()]
+        public void ShouldReturnNullOutsideUpperYearBounds()
+        {
+            // Arrange
+            string inputDate = "01 01 2011";
             MyDate expected = null;
 
             // Act
@@ -115,6 +129,20 @@ namespace DateDifferenceProject.Tests
 
             // Assert
             compareDates(expected, result);
+        }
+
+        [TestMethod()]
+        public void ShouldReturnNullIfInvalidFebDate()
+        {
+            // Arrange
+            string inputDate = "29 02 1991";
+            MyDate expected = null;
+
+            // Act
+            MyDate result = DateDifference.parseInputandValidate(inputDate);
+
+            // Assert
+            Assert.AreEqual(expected, result);
         }
 
         [TestMethod()]

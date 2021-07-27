@@ -114,14 +114,29 @@ namespace DateDifferenceProject
             }
 
             bool invalidDateNumbers = daySuccess == false || monthSuccess == false || yearSuccess == false;
-            
-            //add constraints for date input
-            if (invalidDateNumbers ||
-                month < 1 || month > 12 ||
-                day < 1 || day > getDaysInMonth(month, year) ||
-                year < 1900 || year > 2010)
+
+            //validate date inputs are valid
+            if (invalidDateNumbers)
             {
-                WriteLine("Invalid date input. Please try again");
+                WriteLine($"Invalid input {inputDate}. Format must be DD MM YYYY");
+                return null;
+            }
+
+            if (month < 1 || month > 12)
+            {
+                WriteLine($"Invalid month {month} was inputted. Please enter a valid month between 01 and 12");
+                return null;
+            }
+
+            if (day < 1 || day > getDaysInMonth(month, year))
+            {
+                WriteLine($"Invalid day {day} was inputted. Please enter a valid day");
+                return null;
+            }
+
+            if (year < 1900 || year > 2010)
+            {
+                WriteLine($"Invalid year {year} was inputted. Please enter a valid year between 1900 and 2010");
                 return null;
             }
 
